@@ -1,0 +1,17 @@
+﻿body {
+    background-color: darkblue;
+}
+main {
+    width: 80%;
+}
+h1 {
+    color: red;
+}
+
+form {
+    border: 5px solid red;
+    padding: 10px;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 25px;
+}
