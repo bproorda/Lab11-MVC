@@ -22,12 +22,13 @@ namespace Lab_11_MVC.Controllers
             // return View();
 
             // Post - Redirect - Get
-            return RedirectToAction("Adder", new { StartYear, EndYear });
+            return RedirectToAction("ListPeople", new { StartYear, EndYear });
         }
 
         // Model binding of all the applicable properties in the model type
-        public IActionResult Adder(IndexViewModel viewModel)
+        public IActionResult ListPeope(TimesPerson viewModel)
         {
+            List<TimesPerson> timesPeople = TimesPerson.GetTimesPeople();
             return View(viewModel);
         }
     }
