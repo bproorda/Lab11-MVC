@@ -8,7 +8,7 @@ namespace Lab_11_MVC.Models
 {
     public class TimesPerson
     {
-		internal List<TimesPerson> listOfPeople;
+		
 
 		public int StartYear { get; set; }
 		public int EndYear { get; set; }

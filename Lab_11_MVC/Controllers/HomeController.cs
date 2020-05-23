@@ -22,14 +22,15 @@ namespace Lab_11_MVC.Controllers
             // return View();
 
             // Post - Redirect - Get
-            return RedirectToAction("ListPeople", new { StartYear, EndYear });
+            
+            return RedirectToAction("ListPeople", new { StartYear, EndYear});
         }
 
         // Model binding of all the applicable properties in the model type
         public IActionResult ListPeople(int startYear, int endYear)
         {
             List<TimesPerson> timesPeople = TimesPerson.GetPerson();
-            TimesPerson viewModel = new TimesPerson
+            ListPersonModel viewModel = new ListPersonModel
             {
                 listOfPeople = timesPeople,
                 StartYear = startYear,
