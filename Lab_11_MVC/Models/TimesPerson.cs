@@ -8,10 +8,10 @@ namespace Lab_11_MVC.Models
 {
     public class TimesPerson
     {
-		
 
-		public int StartYear { get; set; }
-		public int EndYear { get; set; }
+
+		public int StartYear { get; set; } = 0;
+		public int EndYear { get; set; } = 2050;
 		public int Year { get; set; }
 		public string Honor { get; set; }
 		public string Name { get; set; }
@@ -22,7 +22,7 @@ namespace Lab_11_MVC.Models
 		public string Category { get; set; }
 		public string Context { get; set; }
 
-		public static List<TimesPerson> GetPerson()
+		public static List<TimesPerson> GetPerson(int startYear, int endYear)
 		{
 			string[] people = File.ReadAllLines("Data/personOfTheYear.csv");
 
@@ -40,7 +40,8 @@ namespace Lab_11_MVC.Models
 					Title = personCell[6],
 					Category = personCell[7],
 					Context = personCell[8],
-				}).ToList();
+				}).Where(person => person.Year >= startYear && person.Year <= endYear)
+				.ToList();
 
 		}
 

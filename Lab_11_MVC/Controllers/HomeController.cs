@@ -29,7 +29,7 @@ namespace Lab_11_MVC.Controllers
         // Model binding of all the applicable properties in the model type
         public IActionResult ListPeople(int startYear, int endYear)
         {
-            List<TimesPerson> timesPeople = TimesPerson.GetPerson();
+            List<TimesPerson> timesPeople = TimesPerson.GetPerson(startYear, endYear);
             ListPersonModel viewModel = new ListPersonModel
             {
                 listOfPeople = timesPeople,
