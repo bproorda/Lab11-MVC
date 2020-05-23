@@ -13,17 +13,34 @@
 <body>
     <main>
         <h1>People of The Year</h1>
-        <p>Search from this year: @Model.StartYear</p>
-        <p>To this year: @Model.EndYear</p>
-        <p>@Model.listOfPeople[0].Name</p>
+        <p>Search Results from year: @Model.StartYear to @Model.EndYear </p>
         
         <table>
+
+            <thead>
+                <tr>
+                    <td>Year</td>
+                    <td>Name</td>
+                    <td>Category</td>
+                    <td>Honor</td>
+                    <td>BirthYear</td>
+                    <td>DeathYear</td>
+                    <td>Country</td>
+                    <td>Context</td>
+                </tr>
+            </thead>
                 @foreach (TimesPerson person in @Model.listOfPeople)
                 {
-                    <tr>
-                        <td>@person.Name</td>
-                        <td>@person.Category</td>
-                    </tr>
+            <tr>
+                <td>@person.Year</td>
+                <td>@person.Name</td>
+                <td>@person.Category</td>
+                <td>@person.Honor</td>
+                <td>@person.BirthYear</td>
+                <td>@person.DeathYear</td>
+                <td>@person.Country</td>
+                <td>@person.Context</td>
+            </tr>
                 }
             </table>
     </main>
