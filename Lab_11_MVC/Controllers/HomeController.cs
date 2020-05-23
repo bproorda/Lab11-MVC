@@ -16,19 +16,29 @@ namespace Lab_11_MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(int StartYear, int EndYear)
+        public IActionResult Index(string StartYear, string EndYear)
         {
             // Don't show View() directly in a POST; redirect instead
             // return View();
 
+            int StartYearNumber = int.Parse(StartYear);
+            int EndYearNumber = int.Parse(EndYear);
+
             // Post - Redirect - Get
-            return RedirectToAction("ListPeople", new { StartYear, EndYear });
+            return RedirectToAction("ListPeople", new { StartYearNumber, EndYearNumber });
         }
 
         // Model binding of all the applicable properties in the model type
-        public IActionResult ListPeople(TimesPerson viewModel)
+        public IActionResult ListPeople(int startYear, int endYear)
         {
             List<TimesPerson> timesPeople = TimesPerson.GetPerson();
+            TimesPerson viewModel = new TimesPerson
+            {
+                listOfPeople = timesPeople,
+                StartYear = startYear,
+                EndYear = endYear,
+            };
+
             return View(viewModel);
         }
     }

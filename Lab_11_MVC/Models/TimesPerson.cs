@@ -8,6 +8,8 @@ namespace Lab_11_MVC.Models
 {
     public class TimesPerson
     {
+		internal List<TimesPerson> listOfPeople;
+
 		public int StartYear { get; set; }
 		public int EndYear { get; set; }
 		public int Year { get; set; }
@@ -33,8 +35,8 @@ namespace Lab_11_MVC.Models
 					Honor = personCell[1],
 					Name = personCell[2],
 					Country = personCell[3],
-					BirthYear = int.Parse(personCell[4]),
-					DeathYear = int.Parse(personCell[5]),
+					BirthYear = personCell[4] != "" ? int.Parse(personCell[4]) : 999,
+					DeathYear = personCell[5] != "" ? int.Parse(personCell[5]) : 999,
 					Title = personCell[6],
 					Category = personCell[7],
 					Context = personCell[8],

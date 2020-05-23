@@ -1,30 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    <!DOCTYPE html>
+﻿@model Lab_11_MVC.Models.TimesPerson
+@using Lab_11_MVC.Models
+<!DOCTYPE html>
 
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Index</title>
-        <link rel="stylesheet" href="~/main.css" />
-    </head>
-    <body>
-        <main>
-            <h1>People of The Year</h1>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/main.css" />
+</head>
+<body>
+    <main>
+        <h1>People of The Year</h1>
+        <p>Search from this year: @Model.StartYear</p>
+        <p>To this year: @Model.EndYear</p>
 
-            @*<table>
-                    @foreach (TimesPerson person in Model)
-                    {
-                        <tr>
-                            <td>@staff.Name</td>
-                            <td>@staff.Role</td>
-                        </tr>
-                    }
-                </table>*@
-        </main>
-        <script src="~/test.js"></script>
-    </body>
+        @*<table>
+                @foreach (TimesPerson person in Model)
+                {
+                    <tr>
+                        <td>@staff.Name</td>
+                        <td>@staff.Role</td>
+                    </tr>
+                }
+            </table>*@
+    </main>
+    <script src="~/test.js"></script>
+</body>
 </html>
-}
+
