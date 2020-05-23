@@ -1,0 +1,50 @@
+﻿
+@model Lab_11_MVC.Models.ListPersonModel
+@using Lab_11_MVC.Models
+@using System.Collections.Generic;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/main.css" />
+</head>
+<body>
+    <main>
+        <h1>People of The Year</h1>
+        <p>Search Results from year: @Model.StartYear to @Model.EndYear </p>
+        
+        <table id="peopleTable">
+
+            <thead>
+                <tr>
+                    <td>Year</td>
+                    <td>Name</td>
+                    <td>Category</td>
+                    <td>Honor</td>
+                    <td>BirthYear</td>
+                    <td>DeathYear</td>
+                    <td>Country</td>
+                    <td>Context</td>
+                </tr>
+            </thead>
+                @foreach (TimesPerson person in @Model.listOfPeople)
+                {
+            <tr>
+                <td>@person.Year</td>
+                <td>@person.Name</td>
+                <td>@person.Category</td>
+                <td>@person.Honor</td>
+                <td>@person.BirthYear</td>
+                <td>@person.DeathYear</td>
+                <td>@person.Country</td>
+                <td>@person.Context</td>
+            </tr>
+                }
+            </table>
+    </main>
+    <script ></script>
+</body>
+</html>
+
