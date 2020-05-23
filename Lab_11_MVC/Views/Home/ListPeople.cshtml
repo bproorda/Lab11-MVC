@@ -17,7 +17,7 @@
         <p>To this year: @Model.EndYear</p>
         <p>@Model.listOfPeople[0].Name</p>
         
-        @*<table>
+        <table>
                 @foreach (TimesPerson person in @Model.listOfPeople)
                 {
                     <tr>
@@ -25,7 +25,7 @@
                         <td>@person.Category</td>
                     </tr>
                 }
-            </table>*@
+            </table>
     </main>
     <script src="~/test.js"></script>
 </body>
