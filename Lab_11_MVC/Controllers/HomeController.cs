@@ -26,9 +26,9 @@ namespace Lab_11_MVC.Controllers
         }
 
         // Model binding of all the applicable properties in the model type
-        public IActionResult ListPeope(TimesPerson viewModel)
+        public IActionResult ListPeople(TimesPerson viewModel)
         {
-            List<TimesPerson> timesPeople = TimesPerson.GetTimesPeople();
+            List<TimesPerson> timesPeople = TimesPerson.GetPerson();
             return View(viewModel);
         }
     }

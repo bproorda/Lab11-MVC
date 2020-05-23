@@ -20,7 +20,7 @@ namespace Lab_11_MVC.Models
 		public string Category { get; set; }
 		public string Context { get; set; }
 
-		public static List<TimesPerson> GetTimesPeople()
+		public static List<TimesPerson> GetPerson()
 		{
 			string[] people = File.ReadAllLines("Data/personOfTheYear.csv");
 
